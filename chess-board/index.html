@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+</head>
+<body>
+  <canvas id="myCanvas" height="900" width="1600" style="border: 1px solid black"></canvas>
+</body>
+  <script>
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var x = 0;
+var y = 0;
+var size = 40;
+var color = 0;
+
+function drawCheckeredPattern(row,col) {
+  for (j = 0; j< row; j++, y += size) {
+    if (j%2 == 0) {
+      var x = 0;
+      for (i = 0; i < col; i++, x += size){
+        if (i%2 == color) {
+          context.fillStyle = 'white';
+          context.strokeRect(x,y,size,size);
+          context.fillRect(x,y,size,size);
+        } else {
+          context.fillStyle = 'black';
+          context.strokeRect(x,y,size,size);
+          context.fillRect(x,y,size,size);
+        }
+      }
+    } else {
+      var x = 0;
+      for (i = 0; i < col; i++, x += size){
+        if (i%2 != color) {
+          context.fillStyle = 'white';
+          context.strokeRect(x,y,size,size);
+          context.fillRect(x,y,size,size);
+        } else {
+          context.fillStyle = 'black';
+          context.strokeRect(x,y,size,size);
+          context.fillRect(x,y,size,size);
+        }
+      }
+    }
+  }
+}
+
+drawCheckeredPattern(10,10);
+  </script>
+</html>
