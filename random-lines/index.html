@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+</head>
+<body>
+  <canvas id="myCanvas" height="300" width="450" style="border: 1px solid black"></canvas>
+</body>
+  <script>
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var cw = myCanvas.width;
+var ch = myCanvas.height;
+
+
+function randomLine() {
+  var randomX = Math.floor(Math.random()*(cw));
+  var randomY = Math.floor(Math.random()*(ch));
+  context.beginPath();
+  context.moveTo(randomX,randomY);
+  context.lineTo(cw/2,ch/2);
+  context.strokeStyle = '#742c99';
+  context.stroke();
+}
+
+for (i=0; i<100; i++) {
+randomLine();
+}
+  </script>
+</html>
