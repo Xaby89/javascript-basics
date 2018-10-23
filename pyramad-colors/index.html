@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+</head>
+<body>
+  <canvas id="myCanvas" height="400" width="600" style="border: 1px solid black"></canvas>
+</body>
+  <script>
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+function pyramidColorful (x,y,z) {
+  var color = 240;
+  for (j = 0; j < z; j++, y += a, x -= y-b, color += 120) {
+    var a = 50;
+    var b = a/2;
+    for (i = 0; i < j; i++, x += a) {
+      context.beginPath();
+      context.moveTo(x,y);
+      context.lineTo(x-b,y+a);
+      context.lineTo(x+b,y+a);
+      context.lineTo(x,y);
+      context.fillStyle = 'hsla('+ color +',80%,60%,0.8)';
+      context.fill();
+    }
+  }
+  return;
+};
+
+pyramidColorful(300,0,6);
+  </script>
+</html>
