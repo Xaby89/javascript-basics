@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>bernard-letter-counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <script>
+    
+function bernardTheLetterCounter () {
+  var sentence = prompt('Enter a sentence.');
+  var letter = prompt('Which letter would you like to count?');
+  var letterCount = 0;
+  for (i = 0; i <= sentence.length; i++) {
+    if (sentence.charAt(i) == letter) {
+      letterCount++;
+    };
+  };
+
+  alert('The letter ' + letter + ' occurs ' + letterCount + ' times in this sentence.');
+  return;
+};
+
+bernardTheLetterCounter();
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
