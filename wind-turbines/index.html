@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>prompt-alert</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <script>
+var allTurbines = 25;
+var turbineCounter = 0;
+var turbinePower = 0;
+var sumPower = 0;
+
+for (var i = 0; i < allTurbines; i++) {
+  if (i < 10) {
+    turbineCounter++;
+    turbinePower = 2000;
+    sumPower += turbinePower;
+    console.log('A(z)' + turbineCounter +'. számú szélturbina teljes fordulaton működik, ' + turbinePower + ' MWh áramot termelve. A farm összteljesítménye jelenleg ' + sumPower + ' MWh.');
+  } else if (i < 20) {
+    turbineCounter++;
+    turbinePower = 1000;
+    sumPower += turbinePower;
+    console.log('A(z)' + turbineCounter +'. számú szélturbina fél fordulaton működik, ' + turbinePower + ' MWh áramot termelve. A farm összteljesítménye jelenleg ' + sumPower + ' MWh.');
+  } else if (i < 25) {
+    turbineCounter++;
+    turbinePower = 0;
+    sumPower += turbinePower;
+    console.log('A(z)' + turbineCounter +'. számú szélturbina nem működik, ' + turbinePower + ' MWh áramot termelve. A farm összteljesítménye jelenleg ' + sumPower + ' MWh.');
+  } else {
+    console.log('Valami váratlan történt.');
+  }
+};
+  </script>
+</head>
+<body>
+    
+</body>
+</html>
